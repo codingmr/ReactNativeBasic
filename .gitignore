@@ -60,3 +60,6 @@ buck-out/
 
 # Coverage
 coverage/
+
+#eslint cache
+.eslintcache

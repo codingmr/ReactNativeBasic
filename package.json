@@ -20,8 +20,8 @@
   },
   "lint-staged": {
     "*.{js, jsx}": [
-      "eslint . --fix",
-      "prettier --write **/*.js && prettier --check **/*.js",
+      "eslint --fix",
+      "prettier --write **/*.js",
       "cross-env NODE_ENV=test jest --ci --reporters=default --reporters=jest-junit --bail --findRelatedTests",
       "git config core.autocrlf input"
     ],
