@@ -15,17 +15,17 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && yarn audit && yarn run lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{js, jsx}": [
-      "eslint --fix",
+      "eslint . --fix",
       "prettier --write **/*.js && prettier --check **/*.js",
       "cross-env NODE_ENV=test jest --ci --reporters=default --reporters=jest-junit --bail --findRelatedTests",
-      "git config core.autocrlf input",
-      "git add"
-    ]
+      "git config core.autocrlf input"
+    ],
+    "*.js": "eslint --cache --fix"
   },
   "dependencies": {
     "react": "16.11.0",
