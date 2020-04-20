@@ -20,12 +20,11 @@
   },
   "lint-staged": {
     "*.{js, jsx}": [
-      "eslint --fix",
+      "eslint --cache --fix",
       "prettier --write **/*.js",
       "cross-env NODE_ENV=test jest --ci --reporters=default --reporters=jest-junit --bail --findRelatedTests",
       "git config core.autocrlf input"
-    ],
-    "*.js": "eslint --cache --fix"
+    ]
   },
   "dependencies": {
     "react": "16.11.0",
