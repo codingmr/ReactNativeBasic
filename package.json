@@ -11,11 +11,11 @@
     "lint-check": "eslint .",
     "lint-fix": "eslint . --fix",
     "prettier-fix": "prettier --write **/*.js && prettier --check **/*.js",
-    "prettier-check": "prettier --list-different **/*.js && prettier --check **/*.js",
+    "prettier-check": "prettier --list-different **/*.js && prettier --check **/*.js"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn audit && yarn run lint-staged"
+      "pre-commit": "yarn test && yarn audit && yarn run lint-staged"
     }
   },
   "lint-staged": {
@@ -59,7 +59,10 @@
     "coverageReporters": [
       "text"
     ],
-    "reporters": ["default", "jest-junit"]
+    "reporters": [
+      "default",
+      "jest-junit"
+    ]
   },
   "jest-junit": {
     "output": "output/coverage/jest/junit/junit.xml",
