@@ -7,24 +7,25 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
+    "test-coverage": "jest --coverage --reporters=default --reporters=jest-junit",
     "lint-check": "eslint .",
     "lint-fix": "eslint . --fix",
     "prettier-fix": "prettier --write **/*.js && prettier --check **/*.js",
     "prettier-check": "prettier --list-different **/*.js && prettier --check **/*.js",
-    "husky": {
-      "hooks": {
-        "pre-commit": "yarn audit && yarn run lint-staged"
-      }
-    },
-    "lint-staged": {
-      "*.{js, jsx}": [
-        "eslint . --fix",
-        "prettier --write **/*.js && prettier --check **/*.js",
-        "cross-env NODE_ENV=test jest --bail --findRelatedTests",
-        "git config core.autocrlf input",
-        "git add ."
-      ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn audit && yarn run lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js, jsx}": [
+      "eslint --fix",
+      "prettier --write **/*.js && prettier --check **/*.js",
+      "cross-env NODE_ENV=test jest --ci --reporters=default --reporters=jest-junit --bail --findRelatedTests",
+      "git config core.autocrlf input",
+      "git add"
+    ]
   },
   "dependencies": {
     "react": "16.11.0",
@@ -47,12 +48,21 @@
     "eslint-plugin-react-native": "^3.8.1",
     "husky": "^4.2.5",
     "jest": "^24.9.0",
+    "jest-junit": "^10.0.0",
     "lint-staged": "^10.1.6",
     "metro-react-native-babel-preset": "^0.58.0",
     "prettier": "^2.0.4",
     "react-test-renderer": "16.11.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "coverageReporters": [
+      "text"
+    ],
+    "reporters": ["default", "jest-junit"]
+  },
+  "jest-junit": {
+    "output": "output/coverage/jest/junit/junit.xml",
+    "usePathForSuiteName": "true"
   }
 }
