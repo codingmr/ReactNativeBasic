@@ -1,7 +1,9 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, View, StatusBar } from 'react-native';
 
-import SplashAnimation from './SplashAnimation';
+import { Colors } from './theme'
+
+import SplashAnimation from './components/SplashAnimation';
 
 const App = () => {
   return (
@@ -16,19 +18,13 @@ const App = () => {
   );
 };
 
-const COLOURS = {
-  red: '#F44336',
-  black: '#000',
-  white: '#fff',
-};
-
 const styles = StyleSheet.create({
   backgroundLayer: {
     flex: 1,
   },
   centerMsg: {
     alignItems: 'center',
-    backgroundColor: COLOURS.white,
+    backgroundColor: Colors.white,
     flex: 1,
     justifyContent: 'center',
   },
