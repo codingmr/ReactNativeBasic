@@ -6,22 +6,16 @@ module.exports = {
     'prettier/react',
     'plugin:react/recommended',
     'plugin:react-native/all',
-    'plugin:jsx-a11y/strict',
     'plugin:jest/recommended',
+    'plugin:promise/recommended',
+    'plugin:import/warnings',
   ],
   env: {
     jest: true,
     'react-native/react-native': true,
   },
-  plugins: ['react-hooks', 'react-native', 'prettier'],
+  plugins: ['react-hooks'],
   rules: {
-    'react/jsx-filename-extension': [
-      1,
-      {
-        extensions: ['.js', '.jsx'],
-      },
-    ],
-    'react/jsx-fragments': [1, 'syntax'],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
   },
