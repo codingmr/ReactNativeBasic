@@ -11,7 +11,7 @@ module.exports = {
   singleQuote: true,
   quoteProps: 'as-needed',
   jsxSingleQuote: false,
-  trailingComma: 'es5',
+  trailingComma: 'all',
   bracketSpacing: true,
   jsxBracketSameLine: false,
   arrowParens: 'always',

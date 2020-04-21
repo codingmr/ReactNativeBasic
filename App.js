@@ -7,7 +7,7 @@ const App = () => {
       <StatusBar barStyle="default" />
       <SafeAreaView style={styles.backgroundLayer}>
         <View style={styles.centerMsg}>
-          <Text>Hello here</Text>
+          <Text>Hello there</Text>
         </View>
       </SafeAreaView>
     </>
