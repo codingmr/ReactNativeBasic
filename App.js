@@ -1,5 +1,7 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, View, Text, StatusBar } from 'react-native';
+import { SafeAreaView, StyleSheet, View, StatusBar } from 'react-native';
+
+import SplashAnimation from './SplashAnimation';
 
 const App = () => {
   return (
@@ -7,7 +9,7 @@ const App = () => {
       <StatusBar barStyle="default" />
       <SafeAreaView style={styles.backgroundLayer}>
         <View style={styles.centerMsg}>
-          <Text>Hello there</Text>
+          <SplashAnimation />
         </View>
       </SafeAreaView>
     </>
@@ -17,6 +19,7 @@ const App = () => {
 const COLOURS = {
   red: '#F44336',
   black: '#000',
+  white: '#fff',
 };
 
 const styles = StyleSheet.create({
@@ -25,7 +28,7 @@ const styles = StyleSheet.create({
   },
   centerMsg: {
     alignItems: 'center',
-    backgroundColor: COLOURS.red,
+    backgroundColor: COLOURS.white,
     flex: 1,
     justifyContent: 'center',
   },
