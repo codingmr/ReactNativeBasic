@@ -5,9 +5,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import SplashScreen from '../containers/splashScreen/SplashScreen';
-import HomeScreen from '../containers/homeScreen/HomeScreen';
+import HomeNavigator from './HomeNavigator';
 
 const Stack = createStackNavigator();
+
+const SPLASH_SCREEN_LENGTH = 2000;
 
 const AppNavigator = () => {
   const [isSplashFinished, setSplashedFinished] = React.useState(false);
@@ -37,10 +39,9 @@ const AppNavigator = () => {
 
   const splashToFinish = () =>
     new Promise((resolve) => {
-      const TWO_SECONDS = 2000;
       setTimeout(() => {
         resolve(1);
-      }, TWO_SECONDS);
+      }, SPLASH_SCREEN_LENGTH);
     });
 
   const loadResources = () => {
@@ -53,6 +54,7 @@ const AppNavigator = () => {
         }, FIVE_SECONDS);
       });
       */
+      return 1;
   };
 
   return (
@@ -61,8 +63,8 @@ const AppNavigator = () => {
         {isSplashFinished && isResourcesLoaded ? (
           <Stack.Screen
             name="Home"
-            component={HomeScreen}
-            options={{ title: 'The Home Screen' }}
+            component={HomeNavigator}
+            options={ {headerShown: false} }
           />
         ) : (
           <Stack.Screen
@@ -72,6 +74,7 @@ const AppNavigator = () => {
           />
         )}
       </Stack.Navigator>
+
     </NavigationContainer>
   );
 };

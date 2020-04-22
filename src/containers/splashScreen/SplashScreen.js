@@ -1,5 +1,5 @@
-import React from 'react';
-import { StatusBar, SafeAreaView, View } from 'react-native';
+import React, { useRef } from 'react';
+import { Animated, StatusBar, SafeAreaView, View } from 'react-native';
 import { Layout } from '../../theme';
 
 import SplashAnimation from '../../components/SplashAnimation';
@@ -9,9 +9,9 @@ const SplashScreen = () => {
     <>
       <StatusBar hidden={true} />
       <SafeAreaView style={Layout.fill}>
-        <View style={[Layout.fill, Layout.center]}>
-          <SplashAnimation />
-        </View>
+          <View style={[Layout.fill, Layout.center]}>
+            <SplashAnimation />
+          </View>
       </SafeAreaView>
     </>
   );

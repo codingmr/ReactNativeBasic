@@ -15,7 +15,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "git config core.autocrlf input && yarn audit && yarn run lint-staged"
+      "pre-commit": "git config core.autocrlf input && git reset -- junit.xml && yarn audit && yarn run lint-staged"
     }
   },
   "lint-staged": {
@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.9",
+    "@react-navigation/bottom-tabs": "^5.2.7",
     "@react-navigation/native": "^5.1.6",
     "@react-navigation/stack": "^5.2.11",
     "lottie-react-native": "^3.3.2",
