@@ -17,11 +17,7 @@ const AppNavigator = () => {
           component={HomeScreen}
           options={{ title: 'The Home Screen' }}
         />
-        <Stack.Screen
-          name="Splash"
-          component={SplashScreen}
-          options={{ header: null }}
-        />
+        <Stack.Screen name="Splash" component={SplashScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

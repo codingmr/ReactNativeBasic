@@ -5,7 +5,6 @@ import SplashScreen from '../containers/splashScreen/SplashScreen';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
-  const tree = renderer.create(
-    <SplashScreen />
-    )
+  const tree = renderer.create(<SplashScreen />);
+  console.log(tree);
 });
