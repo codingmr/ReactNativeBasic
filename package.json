@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "test-coverage": "jest --coverage --reporters=default --reporters=jest-junit",
+    "test-coverage": "jest --coverage --reporters=default",
     "lint-check": "eslint .",
     "lint-fix": "eslint . --fix",
     "prettier-fix": "prettier --write **/*.js && prettier --check **/*.js",
@@ -22,7 +22,7 @@
     "*.js": [
       "eslint --cache --fix",
       "prettier --write **/*.js",
-      "cross-env NODE_ENV=test jest --ci --reporters=default --reporters=jest-junit --bail --findRelatedTests"
+      "jest --ci --reporters=jest-junit --findRelatedTests"
     ]
   },
   "dependencies": {
@@ -87,7 +87,11 @@
     ]
   },
   "jest-junit": {
-    "output": "output/coverage/jest/junit/junit.xml",
+    "suiteName": "jest tests",
+    "outputDirectory": ".",
+    "outputName": "junit.xml",
+    "uniqueOutputName": "false",
+    "ancestorSeparator": " -› ",
     "usePathForSuiteName": "true"
   }
 }
