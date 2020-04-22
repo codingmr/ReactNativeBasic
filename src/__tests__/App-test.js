@@ -1,10 +1,10 @@
 import 'react-native';
 import React from 'react';
-import SplashScreen from '../containers/splashScreen/SplashScreen';
+import App from '../App';
 
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
-  const tree = renderer.create(<SplashScreen />);
+  const tree = renderer.create(<App />).toJSON();
   console.log(tree);
 });
