@@ -11,7 +11,8 @@
     "lint-check": "eslint .",
     "lint-fix": "eslint . --fix",
     "prettier-fix": "prettier --write **/*.js && prettier --check **/*.js",
-    "prettier-check": "prettier --list-different **/*.js && prettier --check **/*.js"
+    "prettier-check": "prettier --list-different **/*.js && prettier --check **/*.js",
+    "commit-check": "prettier --list-different **/*.js && prettier --check **/*.js && eslint . && jest --coverage --reporters=default"
   },
   "husky": {
     "hooks": {

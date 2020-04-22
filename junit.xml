@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="0" time="17.239">
-  <testsuite name="src\__tests__\App-test.js" errors="0" failures="0" skipped="0" timestamp="2020-04-22T16:32:57" time="14.427" tests="1">
-    <testcase classname=" renders correctly" name=" renders correctly" time="0.747">
+<testsuites name="jest tests" tests="3" failures="0" time="4.053">
+  <testsuite name="src\containers\__tests__\Screens-test.js" errors="0" failures="0" skipped="0" timestamp="2020-04-22T19:50:52" time="3.325" tests="3">
+    <testcase classname="Snapshot testing of screens HomeScreen: should render correctly" name="Snapshot testing of screens HomeScreen: should render correctly" time="0.197">
+    </testcase>
+    <testcase classname="Snapshot testing of screens AboutScreen: should render correctly" name="Snapshot testing of screens AboutScreen: should render correctly" time="0.004">
+    </testcase>
+    <testcase classname="Snapshot testing of screens SplashScreen: should render correctly" name="Snapshot testing of screens SplashScreen: should render correctly" time="0.191">
     </testcase>
   </testsuite>
 </testsuites>

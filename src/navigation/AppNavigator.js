@@ -54,7 +54,7 @@ const AppNavigator = () => {
         }, FIVE_SECONDS);
       });
       */
-      return 1;
+    return 1;
   };
 
   return (
@@ -64,7 +64,7 @@ const AppNavigator = () => {
           <Stack.Screen
             name="Home"
             component={HomeNavigator}
-            options={ {headerShown: false} }
+            options={{ headerShown: false }}
           />
         ) : (
           <Stack.Screen
@@ -74,7 +74,6 @@ const AppNavigator = () => {
           />
         )}
       </Stack.Navigator>
-
     </NavigationContainer>
   );
 };
