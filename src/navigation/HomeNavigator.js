@@ -1,43 +1,92 @@
-import "react-native-gesture-handler";
-import React from "react";
+import 'react-native-gesture-handler';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Ionicons from "react-native-vector-icons/Ionicons";
+import HomeScreen from '../containers/homeScreen/HomeScreen';
+import AboutScreen from '../containers/aboutScreen/AboutScreen';
 
-import HomeScreen from "../containers/homeScreen/HomeScreen";
-import AboutScreen from "../containers/aboutScreen/AboutScreen";
+import { Colors } from '../theme';
+import TabBarIcon from '../components/TabBarIcon';
 
-const Tab = createBottomTabNavigator();
+const BottomTab = createBottomTabNavigator();
+const INITIAL_ROUTE_NAME = 'Home';
 
-const HomeNavigator = () => {
+const HomeNavigator = ({ route, component, params = {}, tabBarIconName }) => {
+  HomeNavigator.propTypes = {
+    route: PropTypes.object.isRequired,
+    component: PropTypes.object,
+    params: PropTypes.object,
+    tabBarIconName: PropTypes.string,
+  };
+  const HomeScreenTabBarIcon = ({ focused, size }) => (
+    <TabBarIcon focused={focused} size={size} name="md-home" />
+  );
+  HomeScreenTabBarIcon.propTypes = {
+    focused: PropTypes.boolean,
+    color: PropTypes.string,
+    size: PropTypes.number,
+  };
+
+  const AboutScreenTabBarIcon = ({ focused, size }) => (
+    <TabBarIcon focused={focused} size={size} name="md-information" />
+  );
+  AboutScreenTabBarIcon.propTypes = {
+    focused: PropTypes.boolean,
+    color: PropTypes.string,
+    size: PropTypes.number,
+  };
+
+  const MockedTabBarIcon = ({ focused, size }) => (
+    <TabBarIcon focused={focused} size={size} name={tabBarIconName} />
+  );
+  MockedTabBarIcon.propTypes = {
+    focused: PropTypes.boolean,
+    color: PropTypes.string,
+    size: PropTypes.number,
+  };
+
+  // independent navigation container to prevent going back to the splash screen
+  // mocking screen navigation for jest tests
+  // only renders mock screen when a component is given from screens-test.js
   return (
-    <Tab.Navigator
-      initialRouteName="Home"
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
-
-          if (route.name === "Home") {
-            iconName = focused
-              ? "md-home"
-              : "md-home";
-          } else if (route.name === "About") {
-            iconName = focused ? "md-information-circle-outline" : "md-information-circle";
-          }
-
-          // You can return any component that you like here!
-          return <Ionicons name={iconName} size={size} color={color} />;
-        }
-      })}
-      tabBarOptions={{
-        activeTintColor: "tomato",
-        inactiveTintColor: "gray"
-      }}
-    >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="About" component={AboutScreen} />
-    </Tab.Navigator>
+    <NavigationContainer independent={true}>
+      <BottomTab.Navigator
+        initialRouteName={INITIAL_ROUTE_NAME}
+        tabBarOptions={{
+          activeTintColor: Colors.primary,
+          inactiveTintColor: Colors.inactive,
+        }}
+      >
+        {component === undefined ? (
+          <BottomTab.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{
+              tabBarIcon: HomeScreenTabBarIcon,
+            }}
+          />
+        ) : (
+          <BottomTab.Screen
+            name="MockedScreen"
+            component={component}
+            initialParams={params}
+            options={{
+              tabBarIcon: MockedTabBarIcon,
+            }}
+          />
+        )}
+        <BottomTab.Screen
+          name="About"
+          component={AboutScreen}
+          options={{
+            tabBarIcon: AboutScreenTabBarIcon,
+          }}
+        />
+      </BottomTab.Navigator>
+    </NavigationContainer>
   );
 };
 

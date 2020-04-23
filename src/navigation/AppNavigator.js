@@ -23,7 +23,7 @@ const AppNavigator = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const _asyncSplashScreen = async () => {
     await splashToFinish();
@@ -46,14 +46,7 @@ const AppNavigator = () => {
 
   const loadResources = () => {
     // load app resources here
-    /* Fake resource load timer
-      new Promise((resolve, reject) => {
-        const FIVE_SECONDS = 5000;
-        setTimeout(() => {
-          resolve(1);
-        }, FIVE_SECONDS);
-      });
-      */
+
     return 1;
   };
 
