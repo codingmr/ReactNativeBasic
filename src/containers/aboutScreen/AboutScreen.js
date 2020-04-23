@@ -1,11 +1,11 @@
 import React from 'react';
 import { StatusBar, SafeAreaView, View, Text } from 'react-native';
-import {useRoute} from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import { Layout } from '../../theme';
 
 const AboutScreen = () => {
-  const {params} = useRoute();
-  const {data} = params || {};
+  const { params } = useRoute();
+  const { data } = params || {};
 
   return (
     <>
