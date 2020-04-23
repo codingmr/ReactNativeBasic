@@ -6,11 +6,12 @@
  */
 
 export default {
-  transparent: 'rgba(0,0,0,0)',
+  null: '#ffffff',
   // Example colors:
   white: '#ffffff',
   text: '#212529',
-  primary: '#007bff',
+  primary: '#18abff',
   success: '#28a745',
   error: '#dc3545',
+  inactive: '#808080',
 };

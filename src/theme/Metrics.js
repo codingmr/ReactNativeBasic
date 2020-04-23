@@ -3,12 +3,18 @@
  */
 
 // Examples of metrics you can define:
+export const reverseNormal = -9;
+export const reverseSmall = -6;
+export const reverseTiny = -3;
 export const tiny = 5;
-export const small = tiny * 2; // 10
-export const normal = tiny * 3; // 15
-export const medium = normal * 2; // 30
+export const small = 10; // 10
+export const normal = 15; // 15
+export const medium = 30; // 30
 
 export default {
+  reverseBottomMargin: {
+    marginBottom: reverseTiny,
+  },
   bottomMargin: {
     marginBottom: normal,
   },
