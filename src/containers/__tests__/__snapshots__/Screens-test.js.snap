@@ -507,7 +507,7 @@ exports[`Snapshot testing of screens HomeScreen: should render correctly 1`] = `
                   }
                 >
                   <Text>
-                    Go to Details Screen
+                    Go to Details Screen Please
                   </Text>
                 </View>
               </View>

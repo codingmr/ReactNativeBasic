@@ -16,7 +16,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "git config core.autocrlf input && git reset -- junit.xml && yarn audit && yarn run lint-staged"
+      "pre-commit": "git config core.autocrlf input && git reset junit.xml && yarn audit && yarn run lint-staged && git add junit.xml"
     }
   },
   "lint-staged": {

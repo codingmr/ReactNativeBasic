@@ -20,7 +20,7 @@ const HomeScreen = () => {
           <TouchableOpacity
             onPress={() => navigate('About', { data: 'Pizza x3 🍕🍕🍕' })}
           >
-            <Text>Go to Details Screen</Text>
+            <Text>Go to Details Screen Please</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
