@@ -14,4 +14,5 @@ export default {
   success: '#28a745',
   error: '#dc3545',
   inactive: '#808080',
+  cgRed: '#e03c31',
 };

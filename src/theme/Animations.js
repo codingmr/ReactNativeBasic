@@ -3,5 +3,5 @@
  */
 
 export default {
-  smartSharp: require('../assets/animations/smartsharp2.json'),
+  coffeeMeditation: require('../assets/animations/coffee-meditation.json'),
 };
