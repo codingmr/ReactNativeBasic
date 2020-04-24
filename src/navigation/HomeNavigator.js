@@ -17,7 +17,7 @@ const INITIAL_ROUTE_NAME = 'Home';
 const HomeNavigator = ({ route, component, params = {}, tabBarIconName }) => {
   HomeNavigator.propTypes = {
     route: PropTypes.object.isRequired,
-    component: PropTypes.object,
+    component: PropTypes.func,
     params: PropTypes.object,
     tabBarIconName: PropTypes.string,
   };

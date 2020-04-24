@@ -9,7 +9,7 @@ import HomeNavigator from './HomeNavigator';
 
 const Stack = createStackNavigator();
 
-const SPLASH_SCREEN_LENGTH = 2000;
+const SPLASH_SCREEN_LENGTH = 6000;
 
 const AppNavigator = () => {
   const [isSplashFinished, setSplashedFinished] = React.useState(false);

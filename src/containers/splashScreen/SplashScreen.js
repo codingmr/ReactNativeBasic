@@ -1,17 +1,15 @@
 import React from 'react';
-import { StatusBar, SafeAreaView, View } from 'react-native';
-import { Layout } from '../../theme';
+import { StatusBar, SafeAreaView } from 'react-native';
+import { Layout, Colors } from '../../theme';
 
 import SplashAnimation from '../../components/SplashAnimation';
 
 const SplashScreen = () => {
   return (
     <>
-      <StatusBar hidden={true} />
-      <SafeAreaView style={Layout.fill}>
-        <View style={[Layout.fill, Layout.center]}>
-          <SplashAnimation />
-        </View>
+      <StatusBar backgroundColor={Colors.cgRed} />
+      <SafeAreaView style={[Layout.fill, Layout.center]}>
+        <SplashAnimation />
       </SafeAreaView>
     </>
   );
